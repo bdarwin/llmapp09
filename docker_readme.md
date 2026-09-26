@@ -27,7 +27,7 @@
 
 
   #  Added to both workflows - llm-multiroute-llm-frontend-python                                                    
-  - Docker Hub Login — Authenticates using darryl1975 and the          
+  - Docker Hub Login — Authenticates using bdarwin and the          
   DOCKERHUB_TOKEN secret. Skipped on pull requests to avoid exposing credentials.
   - Metadata extraction — Uses docker/metadata-action@v5 to generate smart tags:
     - sha-<commit> on every build
@@ -41,12 +41,12 @@
   ┌─────────────────────┬────────────────────────────────┐             
   │      Workflow       │             Image              │             
   ├─────────────────────┼────────────────────────────────┤             
-  │ llm-multiroute      │ darryl1975/llm-multiroute      │             
+  │ llm-multiroute      │ bdarwin/llm-multiroute      │             
   ├─────────────────────┼────────────────────────────────┤             
-  │ llm-frontend-python │ darryl1975/llm-frontend-python │             
+  │ llm-frontend-python │ bdarwin/llm-frontend-python │             
   └─────────────────────┴────────────────────────────────┘             
   Required secret
   Add this in your repo settings (Settings > Secrets and variables > Actions):
   Secret: DOCKERHUB_TOKEN
-  Purpose: Docker Hub access token for darryl1975 (generate at https://hub.docker.com/settings/security)
+  Purpose: Docker Hub access token for bdarwin (generate at https://hub.docker.com/settings/security)
   Use a Docker Hub access token rather than your password — you can create one under Account Settings > Security > Access Tokens.

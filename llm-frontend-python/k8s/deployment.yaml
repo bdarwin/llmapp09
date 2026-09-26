@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: llm-frontend-container
-          image: darryl1975/llm-frontend-python:1.0.0
+          image: bdarwin/llm-frontend-python:1.0.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5000

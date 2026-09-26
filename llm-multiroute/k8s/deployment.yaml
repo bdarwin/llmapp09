@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: llm-multiroute-container
-          image: darryl1975/llm-multiroute:1.0.0
+          image: bdarwin/llm-multiroute:1.0.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
