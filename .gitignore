@@ -1,0 +1,21 @@
+# Secrets — never commit real credentials
+.env
+.env.local
+*.pem
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# Tooling / local state
+.deepeval*
+node_modules/
+.idea/
+.DS_Store
+
+# Runtime metrics written by the running app
+llm-multiroute/metrics/*.json
