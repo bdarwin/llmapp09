@@ -1,0 +1,3 @@
+# The code must keep running on Python 3.10 (local venv) as well as the 3.12
+# images, so pyupgrade rules should not suggest 3.11+/3.12+ only syntax.
+target-version = "py310"

@@ -2,10 +2,10 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from langfuse import get_client
 
 from app.config import settings
 from app.controller.ai_controller import router as ai_router
-from langfuse import get_client  # noqa: E402  (after app.config)
 
 
 @asynccontextmanager

@@ -1,17 +1,15 @@
-from typing import Callable, TypeVar
+from collections.abc import Callable
+from typing import TypeVar
 
 from fastapi import APIRouter, HTTPException
+from langfuse import get_client, observe, propagate_attributes
 
-# app.config loads the .env file, so it must be imported before the Langfuse
-# client is created below
 from app.config import settings
 from app.dto.classification_response import ClassificationResponse
 from app.dto.intent_response import IntentResponse
 from app.dto.sentiment_response import SentimentResponse
 from app.dto.summary_response import SummaryResponse
 from app.dto.text_request import TextRequest
-from langfuse import get_client, observe, propagate_attributes  # noqa: E402
-
 from app.guardrails import GuardrailBlockedError, guardrails_engine
 from app.monitoring import metrics_store
 from app.router.model_router import model_router
@@ -20,6 +18,8 @@ from app.service.ai_service import AIService
 router = APIRouter(prefix="/api/ai", tags=["AI Text Analysis"])
 
 ai_service = AIService()
+# app.config (imported above) loads the .env file first, so the client picks up
+# the LANGFUSE_* credentials
 langfuse = get_client()
 
 T = TypeVar("T")

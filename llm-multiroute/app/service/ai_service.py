@@ -1,20 +1,19 @@
 import time
 
 import httpx
+from langfuse import get_client, observe
 
-# app.config loads the .env file, so it must be imported before the Langfuse
-# client is created below
 from app.config import settings
 from app.dto.classification_response import ClassificationResponse
 from app.dto.intent_response import IntentResponse
 from app.dto.sentiment_response import SentimentResponse
 from app.dto.summary_response import SummaryResponse
-from langfuse import get_client, observe  # noqa: E402  (after app.config)
-
 from app.guardrails import guardrails_engine
 from app.monitoring import metrics_store
 from app.router.model_router import ModelRouter, TaskType, model_router
 
+# app.config (imported above) loads the .env file first, so the client picks up
+# the LANGFUSE_* credentials
 langfuse = get_client()
 
 class AIService:
